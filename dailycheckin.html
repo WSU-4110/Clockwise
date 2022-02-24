@@ -19,27 +19,61 @@
       <li><a href="calendar.html">Calendar</a></li>
       <li><a href="reminders.html">Reminders</a></li>
       <li><a href="notes.html">Notes</a></li>
-      <li><a class="active" href="#habits">Daily Habit Tracker</a></li>
-      <li><a href="dailycheckin.html">Daily Check-in</a></li>
+      <li><a href="habits.html">Daily Habit Tracker</a></li>
+       <li><a class="active" href="#dailycheckin">Daily Check-in</a></li>
     </ul>
   </nav>
 
   <!-- The style section here determines fonts, colors, etc-->
     <style>
     body {
-      background-color: #57EED7; margin: 0 10%; font-family: sans-serif;
+      background-color: #f4f8f7; margin: 0 10%; font-family: sans-serif;
       }
       h1 {
           text-align: center;
           font-family: serif;
-          font-weight: normal;
-          text-transform: uppercase;
-          border-bottom: 1px solid #57b1dc;
+          font-weight: normal;å
+          border-bottom: 1px solid #055e88;
           margin-top: 30px;
         }
       h2 {
+        text-align: center;
+        font-family: serif;
+        font-weight: normal;
         color: #000000;
-        font-size: 1em;
+        margin-top: 25px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+        border-right:1px solid rgb(249, 249, 249);
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      .active {
+        background-color: #57b1dc;
       }
     </style>
 
