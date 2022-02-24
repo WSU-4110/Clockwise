@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="calendarStyles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href=
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity=
+  "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
   <!-- Temporary nav bar until we implement reactive buttons-->
     <nav>
       <ul>
@@ -16,11 +22,12 @@
       </ul>
     </nav>
 
-    <script>
-      // constructor function 
+
+<script>
+
+// constructor function 
 const date = new Date();
 date.setDate(1);
-
 
 //month days var
 const monthDays = document.querySelector(". days");
@@ -58,7 +65,7 @@ document.querySelector('.date h1').innerHTML = months[date.getMonth()];
 // displays date
 document.querySelector('.date p').innerHTML = date.toDateStringString();
 
-
+// indicates which days are greyed out - final days of previous month
 for(let x= firstDayIndex; x>0; x--)
 {
   days+= `<div class= "prev_date">${prevFinalDay - x + 1}</div>`
@@ -81,13 +88,9 @@ for(let j = 1; j<= nextDays; j++)
   monthDays.innerHTML = days;
 
 }
-
-
-
 </script>
 
 </head>
-
 <body>
 
   <div class="container">
