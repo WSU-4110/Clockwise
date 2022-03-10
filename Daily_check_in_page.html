@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title> Daily Check-in </title>
+
+  <!-- Temporary nav bar until we implement reactive buttons-->
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="reminders.html">Reminders</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="habits.html">Daily Habit Tracker</a></li>
+       <li><a class="active" href="#dailycheckin">Daily Check-in</a></li>
+    </ul>
+  </nav>
+
+
+  </head>
+<body>
+  <h1>Daily Check-in</h1>
+  <div class="grid-container">
+    <div data-cell-index="0" class="cell" ><input type="text"></div>
+    <div data-cell-index="1" class="cell"><input type="text"></div>
+    <div data-cell-index="2" class="cell"><input type="text"></div>
+    <div data-cell-index="3" class="cell"><input type="text"></div>
+    <div data-cell-index="4" class="cell"><input type="text"></div>
+    <div data-cell-index="5" class="cell"><input type="text"></div>
+    <div data-cell-index="6" class="cell"><input type="text"></div>
+    <div data-cell-index="7" class="cell"><input type="text"></div>
+    <div data-cell-index="8" class="cell"><input type="text"></div>
+    <div data-cell-index="9" class="cell"><input type="text"></div>
+    <div data-cell-index="10" class="cell"><input type="text"></div>
+    <div data-cell-index="11" class="cell"><input type="text"></div>
+    <div data-cell-index="12" class="cell"><input type="text"></div>
+    <div data-cell-index="14" class="cell"><input type="text"></div>
+    <div data-cell-index="15" class="cell"><input type="text"></div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <button style='margin-bottom:16px' type="button" class="block">Add Task</button>
+    <button style='margin-bottom:16px' type="button" class="block">Delete Task</button>
+  </div>
+</div>
+
+<script src="checkScript.js"></script>
+</body>
+</html>
