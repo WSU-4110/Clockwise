@@ -1,6 +1,5 @@
 //class to create, delete, and check off habits
 class Habit {
-
     //method to add habit
     AddHabit()
     {
