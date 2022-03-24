@@ -1,13 +1,12 @@
-/* Basic Style */
 body {
-  background: #fff;
-  color: #333;
-  font-family: Lato, sans-serif;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-family: serif;
 }
 .container {
   display: block;
-  width: 400px;
-  margin: 100px auto 0;
+  width: 500px;
+  margin: 125px auto 0;
 }
 ul {
   margin: 0;
@@ -26,61 +25,66 @@ input, button {
 button {
   background: none;
   border: 0px;
-  color: #888;
-  font-size: 15px;
-  width: 60px;
+  color: rgb(100, 100, 100);
+  font-size: 20px;
+  width: 70px;
   margin: 10px 0 0;
-  font-family: Lato, sans-serif;
+  font-family: serif;
   cursor: pointer;
 }
 button:hover {
-  color: #333;
+  color: rgb(58, 58, 58);
 }
-/* Heading */
+
 h3,
 label[for='new-habit'] {
-  color: #333;
+  color: rgb(100, 100, 100)
   font-weight: 700;
   font-size: 15px;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid rgb(100, 100, 100)
   padding: 30px 0 10px;
   margin: 0;
   text-transform: uppercase;
 }
 input[type="text"] {
   margin: 0;
-  font-size: 18px;
-  line-height: 18px;
-  height: 18px;
+  font-size: 20px;
+  line-height: 20px;
+  height: 20px;
   padding: 10px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 6px;
-  font-family: Lato, sans-serif;
-  color: #888;
+  border: 1px solid rgb(221, 221, 221);
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-family: serif;
+  color: rgb(136, 136, 136);
 }
-input[type="text"]:focus {
-  color: #333;
+input[type="text"]:focus
+{
+  color: rgb(51, 51, 51);
 }
 
 /* New Task */
-label[for='new-habit'] {
+label[for='new-habit']
+{
   display: block;
   margin: 0 0 20px;
 }
-input#new-habit {
+
+input#new-habit
+{
   float: left;
-  width: 318px;
+  width: 350px;
 }
-p > button:hover {
-  color: #0FC57C;
+p > button:hover
+{
+  color: rgb(15, 197, 124);
 }
 
-/* Task list */
+
 li {
   overflow: hidden;
   padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgb(238, 238, 238);
 }
 li > input[type="checkbox"] {
   margin: 0 10px;
@@ -88,25 +92,25 @@ li > input[type="checkbox"] {
   top: 15px;
 }
 li > label {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 40px;
-  width: 237px;
-  padding: 0 0 0 11px;
+  width: 250px;
+  padding: 0 0 0 10px;
 }
 li >  input[type="text"] {
-  width: 226px;
+  width: 250px;
 }
 li > .delete:hover {
-  color: #CF2323;
+  color: rgb(207, 35, 35);
 }
 
-/* Completed */
-#completed-habits label {
+
+#completed-habits label
+{
   text-decoration: line-through;
-  color: #888;
+  color: rgb(136, 136, 136);
 }
 
-/* Edit Task */
 ul li input[type=text] {
   display:none;
 }
