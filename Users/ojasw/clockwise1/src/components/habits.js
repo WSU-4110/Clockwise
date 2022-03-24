@@ -1,190 +1,163 @@
-//Document is the DOM can be accessed in the console with document.window.
-// Tree is from the top, html, body, p etc.
-
-//Problem: User interaction does not provide the correct results.
-//Solution: Add interactivity so the user can manage daily tasks.
-//Break things down into smaller steps and take each step at a time.
-
-
-//Event handling, uder interaction is what starts the code execution.
-
-var habitInput=document.getElementById("new-habit");//Add a new habit.
-var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteHabitHolder=document.getElementById("incomplete-habits");//ul of #incomplete-habits
-var completedHabitsHolder=document.getElementById("completed-habits");//completed-habits
+//declare variables
+//varaible for new habit
+var habitInput=document.getElementById("new-habit");
+//variable for adding button
+var addButton=document.getElementsByTagName("button")[0];
+//create variable for incomplete habits
+var incompleteHabitHolder=document.getElementById("incomplete-habits");
+//create varaible for completed habits
+var completedHabitsHolder=document.getElementById("completed-habits");
 
 
-//New habit list item
-var createNewHabitElement=function(habitString){
+//function to create new habit
+var createNewHabitElement=function(habitString)
+{
+	   	var listItem=document.createElement("li");
 
-	var listItem=document.createElement("li");
+			//check box to check off habits
+			var checkBox=document.createElement("input");
 
-	//input (checkbox)
-	var checkBox=document.createElement("input");//checkbx
-	//label
-	var label=document.createElement("label");//label
-	//input (text)
-	var editInput=document.createElement("input");//text
-	//button.edit
-	var editButton=document.createElement("button");//edit button
+			//label
+			var label=document.createElement("label");
 
-	//button.delete
-	var deleteButton=document.createElement("button");//delete button
+			//create area to input text
+			var editInput=document.createElement("input");
 
-	label.innerText=habitString;
+			//create button to delete habit
+			var deleteButton=document.createElement("button");
 
-	//Each elements, needs appending
-	checkBox.type="checkbox";
-	editInput.type="text";
+			//create button to edit habit
+			var editButton=document.createElement("button");
 
-	editButton.innerText="Edit";//innerText encodes special characters, HTML does not.
-	editButton.className="edit";
-	deleteButton.innerText="Delete";
-	deleteButton.className="delete";
+			label.innerText=habitString;
 
+			editButton.innerText="Edit";
+			editButton.className="edit";
+			deleteButton.innerText="Delete";
+			deleteButton.className="delete";
+			checkBox.type="checkbox";
+			editInput.type="text";
 
+			listItem.appendChild(checkBox);
+			listItem.appendChild(label);
+			listItem.appendChild(editInput);
+			listItem.appendChild(editButton);
+			listItem.appendChild(deleteButton);
 
-	//and appending.
-	listItem.appendChild(checkBox);
-	listItem.appendChild(label);
-	listItem.appendChild(editInput);
-	listItem.appendChild(editButton);
-	listItem.appendChild(deleteButton);
-	return listItem;
+			//return new habit
+			return listItem;
 }
 
 
+//function to add habit and display
+var addHabit=function()
+{
+	    console.log("Add Habit!");
 
-var addHabit=function(){
-	console.log("Add Habit!");
-	//Create a new list item with the text from the #new-habit:
-	var listItem=createNewHabitElement(habitInput.value);
+			//add new habit to list
+			var listItem=createNewHabitElement(habitInput.value);
 
-	//Append listItem to incompleteHabitHolder
-	incompleteHabitHolder.appendChild(listItem);
-	bindHabitEvents(listItem, habitCompleted);
+			//move to incomplete habits
+			incompleteHabitHolder.appendChild(listItem);
+			bindHabitEvents(listItem, habitCompleted);
 
-	habitInput.value="";
-
+			habitInput.value="";
 }
 
-//Edit an existing task.
 
-var editHabit=function(){
-console.log("Edit Habit!");
-console.log("Save Habit!'");
+//function to edit a habit
+	  	var editHabit=function(){
+	  	console.log("Edit Habit!");
+      console.log("Save Habit!'");
+
+			var listItem=this.parentNode;
+			var editInput=listItem.querySelector('input[type=text]');
+			var label=listItem.querySelector("label");
+			var containsClass=listItem.classList.contains("editMode");
 
 
-var listItem=this.parentNode;
-
-var editInput=listItem.querySelector('input[type=text]');
-var label=listItem.querySelector("label");
-var containsClass=listItem.classList.contains("editMode");
-		//If class of the parent is .editmode
-		if(containsClass){
-
-		//switch to .editmode
-		//label becomes the inputs value.
+			if(containsClass)
+			{
 			label.innerText=editInput.value;
-		}else{
+	   	}
+			else
+			{
 			editInput.value=label.innerText;
-		}
+		  }
 
-		//toggle .editmode on the parent.
-		listItem.classList.toggle("editMode");
+		  listItem.classList.toggle("editMode");
 }
 
 
-
-
-//Delete habit.
+//function for deleting a habit
 var deleteHabit=function(){
 		console.log("Delete Habit!");
 
 		var listItem=this.parentNode;
 		var ul=listItem.parentNode;
-		//Remove the parent list item from the ul.
+
+		//remove it
 		ul.removeChild(listItem);
 
 }
 
 
-//Mark task completed
-var habitCompleted=function(){
+//function to make habit complete
+var habitCompleted=function()
+{
 		console.log("Complete Habit!");
 
-	//Append the habit list item to the #completed-habits
-	var listItem=this.parentNode;
-	completedHabitsHolder.appendChild(listItem);
-				bindHabitEvents(listItem, habitIncomplete);
-
+	  //move to display in completed habits
+	  var listItem=this.parentNode;
+	  completedHabitsHolder.appendChild(listItem);
+		bindHabitEvents(listItem, habitIncomplete);
 }
 
-
-var habitIncomplete=function(){
+//function to make habit incomplete
+var habitIncomplete=function()
+{
 		console.log("Incomplete Habit!");
-//Mark habit as incomplete.
-	//When the checkbox is unchecked
-		//Append the habit list item to the #incomplete-habits.
+
+	  //move to display in incompleted habits
 		var listItem=this.parentNode;
-	incompleteHabitHolder.appendChild(listItem);
-			bindHabitEvents(listItem,habitCompleted);
+	  incompleteHabitHolder.appendChild(listItem);
+	  bindHabitEvents(listItem,habitCompleted);
 }
 
-
-
-var ajaxRequest=function(){
-	console.log("AJAX Request");
+//fuction for AJAX request
+var ajaxRequest=function()
+{
+	console.log("AJAX Request!");
 }
 
-//The glue to hold it all together.
-
-
-//Set the click handler to the addTask function.
 addButton.onclick=addHabit;
 addButton.addEventListener("click",addHabit);
 addButton.addEventListener("click",ajaxRequest);
 
-
-var bindHabitEvents=function(habitListItem,checkBoxEventHandler){
+//function for binding habits
+var bindHabitEvents=function(habitListItem,checkBoxEventHandler)
+{
 	console.log("bind list item events");
-//select ListItems children
+
 	var checkBox=habitListItem.querySelector("input[type=checkbox]");
 	var editButton=habitListItem.querySelector("button.edit");
 	var deleteButton=habitListItem.querySelector("button.delete");
 
 
-			//Bind editTask to edit button.
+			//Binding vaiables to their respective buttons
 			editButton.onclick=editHabit;
-			//Bind deleteTask to delete button.
 			deleteButton.onclick=deleteHabit;
-			//Bind taskCompleted to checkBoxEventHandler.
 			checkBox.onchange=checkBoxEventHandler;
 }
 
-//cycle over incompleteTaskHolder ul list items
-	//for each list item
-	for (var i=0; i<incompleteHabitHolder.children.length;i++){
-
-		//bind events to list items chldren(tasksCompleted)
+		//binding incomplete and complete
+for (var i=0; i<incompleteHabitHolder.children.length;i++)
+{
 		bindHabitEvents(incompleteHabitHolder.children[i],habitCompleted);
-	}
+}
 
+for (var i=0; i<completedHabitsHolder.children.length;i++)
+{
 
-
-
-//cycle over completedTasksHolder ul list items
-	for (var i=0; i<completedHabitsHolder.children.length;i++){
-	//bind events to list items chldren(tasksIncompleted)
 		bindHabitEvents(completedHabitsHolder.children[i],habitIncomplete);
-	}
-
-
-
-
-// Issues with usabiliy don't get seen until they are in front of a human tester.
-
-//prevent creation of empty tasks.
-
-//Shange edit to save when you are in edit mode.
 }
