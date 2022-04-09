@@ -1,0 +1,10 @@
+POST http://localhost:4000/app/signup
+
+Contest-Type: application/json
+
+{
+    "fullName":"Ojaswee Panthi",
+    "userName":"ojaswee",
+    "email":"panthiojaswee@gmail.com",
+    "password":"csc1234"
+}
