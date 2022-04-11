@@ -3,12 +3,14 @@ import uuid from "react-uuid";
 import "./Notes.css";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
+import { toBeInvalid } from "@testing-library/jest-dom/dist/matchers";
 
 function Notes() {
   const [notes, setNotes] = useState(
     localStorage.notes ? JSON.parse(localStorage.notes) : []
   );
   const [activeNote, setActiveNote] = useState(false);
+
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -21,9 +23,14 @@ function Notes() {
       body: "",
       lastModified: Date.now(),
     };
-
+    if (newNote = null)
+      throw new Error();
     setNotes([newNote, ...notes]);
     setActiveNote(newNote.id);
+  };
+
+  const currentNotes = () => {
+    return null;
   };
 
   const onDeleteNote = (noteId) => {
@@ -43,6 +50,7 @@ function Notes() {
   };
 
   const getActiveNote = () => {
+    document.write("Current Notes");
     return notes.find(({ id }) => id === activeNote);
   };
 
@@ -51,6 +59,7 @@ function Notes() {
       <Sidebar
         notes={notes}
         onAddNote={onAddNote}
+        currentNote={currentNote}
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
