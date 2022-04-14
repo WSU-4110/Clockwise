@@ -1,0 +1,52 @@
+
+.app 
+{
+  align-items: center;
+  left: 50%;
+  background: white;
+  padding: 20px;
+}
+
+.habitsDisplay {
+  left: 50%;
+  align-items: center;
+  background: white;
+  max-width: 400px;
+  padding: 4px;
+}
+
+.habit {
+  left: 50%;
+  align-items: center;
+  background: lightslategray;
+  border-radius: 5px;
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+
+.HabitInfo {
+  left: 50%;
+  align-items: left;
+  background: lightskyblue;
+  border-radius: 10px;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+
+}
+
+.varOne
+{
+  background: lightgray;
+}
+.varTwo{
+  background: lightgray;
+}
+.varThree{
+  background: lightgray;
+}
