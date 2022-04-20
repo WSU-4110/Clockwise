@@ -29,6 +29,11 @@ export const MenuItems =[
         title:'Login',
         url:'#',
         cName:'nav-links-mobile'
+    },
+      {
+        title:'Habit Tracker',
+        url:'#',
+        cName:'nav-links'
     }
 
 
