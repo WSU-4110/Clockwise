@@ -1,0 +1,25 @@
+.app {
+  background: linear-gradient(180deg, mediumpurple, lightpink);
+  height: auto;
+  padding: 30px;
+}
+
+.todo-list {
+  background: mediumpurple;
+  max-width: 400px;
+  padding: 4px;
+}
+
+.todo {
+  align-items: center;
+  background: lightpink;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+}
+
+
