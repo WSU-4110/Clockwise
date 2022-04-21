@@ -8,10 +8,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 import {Home} from './components/Home';
 import {Calender} from './components/Calender';
 import {Notes} from './components/Notes';
-//import {DailyCheckins} from './components/DailyCheckins';
+import {DailyCheckins} from './components/DailyCheckins';
 import {Reminder} from './components/Reminder';
 import {Habits} from './components/Habits';
 import {Login} from './components/Login';
@@ -33,7 +34,7 @@ function App() {
         <Nav.Link as={Link} to ="/Home">Home</Nav.Link>
         <Nav.Link as={Link} to ="/Calender">Calender</Nav.Link>
         <Nav.Link as={Link} to ="/Notes">Notes</Nav.Link>
-       
+        <Nav.Link as={Link} to ="/DailyCheckins">DailyCheckins</Nav.Link>
         <Nav.Link as={Link} to ="/Reminder">Reminder</Nav.Link>
         <Nav.Link as={Link} to ="/Habits">Habits</Nav.Link>
         <Nav.Link as={Link} to ="/Login">Login</Nav.Link>
@@ -45,8 +46,8 @@ function App() {
       <Routes>
         <Route path="/Home" element={<Home/>}/>
         <Route path="/Calender" element={<Calender/>}/>
+        <Route path="/DailyCheckins" element={<DailyCheckins/>}/>
         <Route path="/Notes" element={<Notes/>}/>
-        
         <Route path="/Reminder" element={<Reminder/>}/>
         <Route path="/Habits" element={<Habits/>}/>
         <Route path="/Login" element={<Login/>}/>
